@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オービット合同会社 | デジタルクリエイティブエージェンシー</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">ORBIT</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">ホーム</a></li>
+            <li><a href="about.html">企業情報</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>
+                デジタルで<br>
+                <span>未来を創造する</span>
+            </h1>
+            <p>
+                私たちは革新的なデザインと最先端の技術で、
+                あなたのビジョンを形にします。
+            </p>
+            <a href="#contact" class="btn">相談してみる</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>サービス</h2>
+            <p>あなたのビジネスを次のレベルへ</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>業務効率化</h3>
+                <p>業務プロセスを分析し、最適化することで生産性を向上させます。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👔</div>
+                <h3>COO代行</h3>
+                <p>経営のパートナーとして、オペレーション全般をサポートします。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>新規プロダクト相談</h3>
+                <p>アイデアの検証から市場投入まで、プロダクト開発を支援します。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>プロジェクトマネージメント</h3>
+                <p>プロジェクトを成功に導くための計画立案と進行管理を行います。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✅</div>
+                <h3>QA</h3>
+                <p>品質保証のプロセス構築とテスト実施で、高品質を担保します。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>ブランディング支援</h3>
+                <p>一貫性のあるブランドアイデンティティで、強い印象を残します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="section-title">
+                <h2>お問い合わせ</h2>
+                <p>プロジェクトについてお気軽にご相談ください</p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="お名前" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="メールアドレス" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>ご相談内容を選択してください</option>
+                        <option value="業務効率化">業務効率化</option>
+                        <option value="COO代行">COO代行</option>
+                        <option value="新規プロダクト相談">新規プロダクト相談</option>
+                        <option value="プロジェクトマネージメント">プロジェクトマネージメント</option>
+                        <option value="QA">QA</option>
+                        <option value="ブランディング支援">ブランディング支援</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="メッセージ" required></textarea>
+                </div>
+                <button type="submit" class="btn">送信する</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 オービット合同会社. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll animation for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            // ボタンを無効化
+            submitBtn.disabled = true;
+            submitBtn.textContent = '送信中...';
+
+            const data = {
+                name: form.querySelector('input[type="text"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                service: form.querySelector('select').value,
+                message: form.querySelector('textarea').value
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('お問い合わせありがとうございます！\n後ほどご連絡いたします。');
+                    form.reset();
+                } else {
+                    alert('エラー: ' + (result.error || '送信に失敗しました'));
+                }
+            } catch (error) {
+                alert('通信エラーが発生しました。\n時間をおいて再度お試しください。');
+                console.error('送信エラー:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    </script>
+</body>
+</html>
